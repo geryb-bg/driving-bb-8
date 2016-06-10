@@ -13,8 +13,10 @@ On Windows machines we must make sure that the correct USB drivers are installed
 ### Initial Setup:
 * requires Python >= v2.5.0 & < 3.0.0
 * npm install -g cylon
+* npm install -g cylon-ble --msvs_version=2012
+* npm install cylon cylon-ble cylon-sphero-ble --msvs_version=2012
 
-
-* npm install -g cylon-ble
-* npm install cylon cylon-sphero-ble
-* npm install cylon cylon-bb8
+### Running:
+* run command cylon-ble-scan
+* find BB UUID
+* plug into code
