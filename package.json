@@ -1,0 +1,9 @@
+{
+  "name": "driving-bb-8",
+  "private": true,
+  "dependencies": {
+    "cylon": "^1.3.0",
+    "cylon-ble": "^0.10.1",
+    "cylon-sphero-ble": "^0.11.0"
+  }
+}
