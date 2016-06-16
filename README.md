@@ -3,10 +3,10 @@
 
 ### Windows Machines
 On Windows machines we must make sure that the correct USB drivers are installed for our BLE: [Reference](https://github.com/orbotix/sphero.js/issues/26)
-* Install official driver that comes with the dongle
+* Install official driver that comes with the device
 * Download [Zadig USB driver](http://zadig.akeo.ie/) installer
 * Run the program, select options -> list all devices
-* Select BCM20702A0 (the bluetooth device) from the dropdown
+* Select your bluetooth device from the dropdown
 * At driver section select WinUSB
 * Click replace driver.
 
