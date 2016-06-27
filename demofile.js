@@ -14,6 +14,6 @@ Cylon.robot({
   },
 
   work: function(my) {
-              
+    
   }
 }).start();
