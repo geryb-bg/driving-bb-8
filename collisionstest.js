@@ -16,6 +16,7 @@ Cylon.robot({
   work: function(my) {
     var errorColour = 0xff3300; //red
     var startColor = 0xFFFFFF; //white
+    var direction = 0;
 
     my.bb8.on('collision', function() {
         console.log("Collision detected!!!");
@@ -24,24 +25,25 @@ Cylon.robot({
 
         console.log("Error colour");
         my.bb8.color(errorColour);
-
-        after(2000, function() {
+        
+        after(5000, function() {
             console.log("Everything is ok, just turn around");
             console.log("Normal colour");
             my.bb8.color(startColor);
-            console.log("Back")
-            my.bb8.roll(60, 180);
-        });
+            direction = Math.floor(Math.random() * 360);
+            console.log("dir: " + direction);
+            my.bb8.roll(100, direction);
+        });        
     });
 
     my.bb8.color(startColor);
     my.bb8.detectCollisions();
-    my.bb8.roll(100, 0);
+    my.bb8.roll(100, direction); 
 
-    //after 10 seconds stop
-    after(20000, function() {   
-        console.log("Done!")           
-        my.bb8.stop();
-    });
+    after(20000, function() {
+      console.log("Cancelled")   
+      my.bb8.color(0x000000);        
+      my.bb8.stop();
+    });   
   }
 }).start();
