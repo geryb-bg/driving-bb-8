@@ -14,6 +14,13 @@ Cylon.robot({
   },
 
   work: function(my) {
+    var red = 0xff0000;
+    var green = 0x00ff00;
+    var blue = 0x0000ff;
+    var white = 0xffffff;
+    var black = 0x000000;
+
+
     
   }
 }).start();
