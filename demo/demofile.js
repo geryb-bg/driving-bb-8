@@ -1,6 +1,6 @@
 var Cylon = require('cylon');
 
-var datajson = require('./data.json');
+var datajson = require('../data.json');
 
 var myUUId = datajson.devices.bb8;
 

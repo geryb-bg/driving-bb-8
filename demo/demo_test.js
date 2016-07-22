@@ -11,7 +11,7 @@ chai.use(sinonChai);
 var clock = sinon.useFakeTimers();
 var Cylon = require('cylon');
 Cylon.config({ testMode: true });
-require("../firstrun.js");
+require("./testbot.js");
 
 describe("robot", function () {
     

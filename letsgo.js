@@ -14,20 +14,23 @@ Cylon.robot({
   },
 
   work: function(my) {
+    // var audio = new Audio('audio_file.mp3');
+    // audio.play();
+
+    var random = 0xff0000;
+    var bitfilter = 0x00ff00;
 
     for (var i = 0; i < 6; i++) {
-      after((100 * i), function() {
-        my.bb8.spin("left", 100);
+      after(500, function() {
+          random = random ^ bitfilter;
+          my.bb8.color(random);
       });
-
-      after((100 * (i+1)), function() {
-        my.bb8.spin("right", 100);
-      }); 
       i++;     
     }    
 
     after(600, function() {
         my.bb8.stop();
+        my.bb8.color(0x000000);
     });
   }
 }).start();
