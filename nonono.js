@@ -14,8 +14,6 @@ Cylon.robot({
   },
 
   work: function(my) {
-    // var audio = new Audio('audio_file.mp3');
-    // audio.play();
 
     my.bb8.color(0xff0000);
     for (var i = 0; i < 6; i++) {

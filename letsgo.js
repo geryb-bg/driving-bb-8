@@ -14,8 +14,6 @@ Cylon.robot({
   },
 
   work: function(my) {
-    // var audio = new Audio('audio_file.mp3');
-    // audio.play();
 
     var random = 0xff0000;
     var bitfilter = 0x00ff00;
