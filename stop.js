@@ -5,8 +5,6 @@ var datajson = require('./data.json');
 var myUUId = datajson.devices.bb8;
 
 Cylon.robot({
-  name: "first",
-
   connections: {
     bluetooth: { adaptor: 'central', uuid: myUUId, module: 'cylon-ble' }
   },
@@ -16,6 +14,7 @@ Cylon.robot({
   },
 
   work: function(my) {
-    my.devices.bb8.color(0xffffff);    
+        my.bb8.stop();
+        my.bb8.color(0x000000);
   }
 }).start();

@@ -16,8 +16,6 @@ Cylon.robot({
   },
 
   work: function(my) {
-    every((1).second(), function() {
-      my.bb8.getColor();
-    });
+    my.bb8.color(0xffffff);    
   }
 }).start();

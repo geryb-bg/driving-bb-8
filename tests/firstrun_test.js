@@ -4,6 +4,7 @@ process.env['CYLON_TEST'] = true;
 var chai = require("chai");
 var sinon = require("sinon");
 var sinonChai = require("sinon-chai");
+
 var expect = chai.expect;
 chai.should();
 chai.use(sinonChai);
@@ -25,7 +26,7 @@ describe("robot", function () {
 
   it("should call color after 1 second", function() {    
 	var bb8 = robot.devices.bb8;
-    var color = sinon.stub(bb8, 'getColor');
+    var color = sinon.stub(bb8, 'color');
 	
     clock.tick(1000);
     expect(color).to.have.been.called;
