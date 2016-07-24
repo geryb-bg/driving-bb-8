@@ -19,7 +19,8 @@ Cylon.robot({
     var blue = 0x0000ff;
     var white = 0xffffff;
     var black = 0x000000;
-    var random = red ^ blue;
+    var bitFilter = 0xFFFF00;
+    var random = red ^ bitFilter;
 
     
   }
