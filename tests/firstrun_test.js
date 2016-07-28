@@ -6,8 +6,6 @@ var sinon = require("sinon");
 var sinonChai = require("sinon-chai");
 
 var expect = chai.expect;
-chai.should();
-chai.use(sinonChai);
 
 var clock = sinon.useFakeTimers();
 var Cylon = require('cylon');
@@ -21,8 +19,12 @@ describe("robot", function () {
   });
 
   it("should have work", function () {
-    return robot.work.should.be.a('function');
+    expect(robot.work).to.be.a('function');
   }); 
+
+  it("should define bb8", function () {
+    expect(robot.devices.bb8).to.exist;
+  })
 
   it("should call color after 1 second", function() {    
 	var bb8 = robot.devices.bb8;

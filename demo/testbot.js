@@ -12,7 +12,7 @@ Cylon.robot({
   },
 
   devices: {
-    bb8: { driver: 'bb8', module: 'cylon-sphero-ble' }
+    
   },
 
   work: function(my) {
