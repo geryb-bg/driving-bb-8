@@ -20,3 +20,6 @@ On Windows machines we must make sure that the correct USB drivers are installed
 * run command cylon-ble-scan
 * find BB UUID
 * plug into code
+
+### Leap Motion
+* npm install cylon-leapmotion --msvs_version=2012
