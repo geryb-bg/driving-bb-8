@@ -26,24 +26,24 @@ Cylon.robot({
         console.log("Error colour");
         my.bb8.color(errorColour);
         
-        after(5000, function() {
+        after((5).seconds(), function() {
             console.log("Everything is ok, just turn around");
             console.log("Normal colour");
             my.bb8.color(startColor);
             direction = Math.floor(Math.random() * 360);
             console.log("dir: " + direction);
             my.bb8.roll(100, direction);
-        });        
+
+            after((5).seconds(), function() {
+              console.log("Cancelled")   
+              my.bb8.color(0x000000);        
+              my.bb8.stop();
+            });
+        });
     });
 
     my.bb8.color(startColor);
     my.bb8.detectCollisions();
-    my.bb8.roll(100, direction); 
-
-    after(20000, function() {
-      console.log("Cancelled")   
-      my.bb8.color(0x000000);        
-      my.bb8.stop();
-    });   
+    my.bb8.roll(100, direction);        
   }
 }).start();
