@@ -74,7 +74,7 @@ Cylon.robot({
                 else {
                     if (rolling) {
                         rolling = false;
-                        console.log("Stop inner");
+                        console.log("Stop");
                         bb8.stop();
                     }
                 }
