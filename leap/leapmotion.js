@@ -34,21 +34,58 @@ Cylon.robot({
 
     work: function (my) {
         var rolling = false;
-        leap.on("hand", function(hand) {           
-            if (hand.palmNormal[2] < -0.2) {                
-                if (!rolling) {
-                    rolling = true;
-                    console.log(rolling);
-                    bb8.roll(30,0);                    
+        var direction = 0; //forward
+
+         leap.on("hand", function(hand) {
+
+            var handOpen = !!hand.fingers.filter(function (finger) {
+                return finger.extended;
+            }).length;
+        
+            if (handOpen) {
+                if (hand.palmNormal[2] < -0.4) {    
+                     if (rolling && direction != 0) {
+                         rolling = false;
+                         direction = 0;
+                         console.log("Pause");
+                         bb8.stop();
+                     }
+
+                    if (!rolling) {
+                        rolling = true;
+                        console.log("Forward");
+                        bb8.roll(60, direction);
+                    }
                 }
-            } else {                
+                else if (hand.palmNormal[2] > 0.1) {
+                    if (rolling && direction != 180) {
+                        rolling = false;
+                        direction = 180;
+                        console.log("Pause");
+                        bb8.stop();
+                    }
+
+                    if (!rolling) {
+                        rolling = true;
+                        console.log("Backwards");
+                        bb8.roll(60, direction);
+                    }
+                }
+                else {
+                    if (rolling) {
+                        rolling = false;
+                        console.log("Stop inner");
+                        bb8.stop();
+                    }
+                }
+            } else {
                 if (rolling) {
                     rolling = false;
-                    console.log(rolling);
+                    console.log("Stop hand closed");
                     bb8.stop();
                 }
             }
-        });
+         });
     } 
 }).start();
 
