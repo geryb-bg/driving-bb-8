@@ -5,7 +5,7 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/leap/leapmotion.js",
+            "program": "${workspaceRoot}/demo/demo.js",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
